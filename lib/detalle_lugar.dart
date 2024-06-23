@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class DetalleLugarPage extends StatelessWidget {
   final String lugar;
   final String imageName;
+  final String descripcion;
 
-  DetalleLugarPage(this.lugar, this.imageName);
+  DetalleLugarPage(this.lugar, this.imageName, this.descripcion);
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +52,10 @@ class DetalleLugarPage extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+              descripcion,
               style: TextStyle(
                 fontSize: 16,
               ),
