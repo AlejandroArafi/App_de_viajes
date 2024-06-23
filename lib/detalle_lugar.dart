@@ -23,10 +23,19 @@ class DetalleLugarPage extends StatelessWidget {
               child: Container(
                 height: 300,
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
                     image: AssetImage('assets/$imageName'),
                     fit: BoxFit.cover,
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(1),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -39,6 +48,15 @@ class DetalleLugarPage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+              style: TextStyle(
+                fontSize: 16,
               ),
             ),
           ),
