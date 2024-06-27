@@ -69,7 +69,7 @@ class LugaresPage extends StatelessWidget {
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(10),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 3 / 2,
           crossAxisSpacing: 10,
@@ -122,7 +122,7 @@ class LugaresPage extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       child: Text(
                         lugares[index]['name']!,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 15,
                           color: Colors.white,
                         ),
