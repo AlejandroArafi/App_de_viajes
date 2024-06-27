@@ -11,7 +11,14 @@ class DetalleLugarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(lugar),
+        title: Text(lugar,
+            style: TextStyle(fontWeight: FontWeight.w600, shadows: <Shadow>[
+              Shadow(
+                offset: Offset(1.5, 1.5),
+                blurRadius: 1.0,
+                color: Color.fromARGB(50, 0, 0, 0),
+              )
+            ])),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -45,10 +52,17 @@ class DetalleLugarPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
-              'Descripción de $lugar',
-              style: TextStyle(
+              'Acerca de $lugar',
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
+                shadows: [
+                  Shadow(
+                    offset: Offset(1.0, 1.0),
+                    blurRadius: 2,
+                    color: Color.fromARGB(50, 0, 0, 0),
+                  ),
+                ],
               ),
             ),
           ),
