@@ -47,7 +47,13 @@ class LugaresPage extends StatelessWidget {
       'image': 'roma.jpg',
       'descripcion':
           'Roma, la capital de Italia, es una extensa ciudad cosmopolita que tiene casi 3.000 años de arte, arquitectura y cultura influyentes en todo el mundo. Sus ruinas como las del Foro y el Coliseo evocan el poder del antiguo Imperio Romano.'
-    }
+    },
+    {
+      'name': 'Sidney',
+      'image': 'sydney.jpg',
+      'descripcion':
+          'Sídney, capital de Nueva Gales del Sur y una de las ciudades más grandes de Australia, es conocida por su emblemática Ópera de Sídney, con un diseño distintivo en forma de velas. El enorme puerto de la ciudad alberga el famoso puerto de la bahía de Sídney y el puente del puerto de Sídney, dos iconos de la ciudad.'
+    },
   ];
 
   @override
@@ -61,11 +67,17 @@ class LugaresPage extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView.builder(
+      body: GridView.builder(
+        padding: const EdgeInsets.all(10),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
         itemCount: lugares.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(lugares[index]['name']!),
+          return InkWell(
             onTap: () {
               Navigator.push(
                 context,
@@ -73,11 +85,53 @@ class LugaresPage extends StatelessWidget {
                   builder: (context) => DetalleLugarPage(
                     lugares[index]['name']!,
                     lugares[index]['image']!,
-                    lugares[index]['descripcion']!, // Pasa la descripción aquí
+                    lugares[index]['descripcion']!,
                   ),
                 ),
               );
             },
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              elevation: 5,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Stack(
+                  alignment: Alignment.bottomLeft,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/${lugares[index]['image']}',
+                      height: double.infinity,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.black.withOpacity(0.7),
+                            Colors.black.withOpacity(0),
+                          ],
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        lugares[index]['name']!,
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           );
         },
       ),
