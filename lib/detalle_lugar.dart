@@ -12,11 +12,12 @@ class DetalleLugarPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(lugar,
-            style: TextStyle(fontWeight: FontWeight.w600, shadows: <Shadow>[
+            style:
+                const TextStyle(fontWeight: FontWeight.w600, shadows: <Shadow>[
               Shadow(
                 offset: Offset(1.0, 1.0),
                 blurRadius: 1.0,
@@ -45,14 +46,14 @@ class DetalleLugarPage extends StatelessWidget {
                       color: Colors.grey.withOpacity(1),
                       spreadRadius: 5,
                       blurRadius: 7,
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
@@ -74,7 +75,7 @@ class DetalleLugarPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
               descripcion,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
               ),
             ),

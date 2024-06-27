@@ -25,3 +25,8 @@ flutter:
     - assets/londres.jpg
     - assets/roma.jpg
     - assets/sydney.jpg
+
+  fonts:
+    - family: NombreDeTuFuente
+      fonts:
+        - asset: assets/fonts/ArchivoDeTuFuente.ttf
